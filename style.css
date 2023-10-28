@@ -9,7 +9,6 @@ body {
     justify-content: center;
     font-family: 'Poppins';
     align-items: center;
-    background-repeat: no-repeat;
     background-image: linear-gradient(180deg, #8360c3, #2ebf91);
 }
 .container {
@@ -23,7 +22,7 @@ body {
     flex-direction: column;
 }
 .container h1 {
-    font-size: 60px;
+    font-size: 7vh;
     background: -webkit-linear-gradient(#C9FFBF, #FFAFBD);
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;
@@ -59,6 +58,7 @@ body {
     outline: none;
     border: none;
     font-size: 18px;
+    caret-color: blue;
     padding: 10px 20px;
     border-radius: 1rem;
     font-family: 'Poppins';
@@ -66,6 +66,19 @@ body {
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(180deg, #8360c3, #17e2a2);
+}
+.editing-input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    caret-color: blue;
+    padding: 2px 4px;
+    border-radius: 1rem;
+    font-family: 'Poppins';
+    background: -webkit-linear-gradient(#C9FFBF, #FFAFBD);
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;
 }
 .todoList button {
     width: 30%;
@@ -94,7 +107,9 @@ body {
     overflow: auto;
 }
 .todoItem {
+    width: 100%;
     height: 100%;
+    overflow: auto;
     list-style: none;
     position: relative;
 }
@@ -103,11 +118,12 @@ body {
 }
 ul .itemTask {
     gap: 1rem;
-    width: 100%;
-    height: 30px;
+    height: auto;
     display: flex;
+    overflow: auto;
+    overflow-wrap: break-word;
     text-align: center;
-    padding: 5px 30px;
+    padding: 5px 100px 5px 30px;
     cursor: pointer;
     justify-content: space-between;
     align-items: center;
@@ -198,16 +214,16 @@ ul li.checked {
 ul li.checked::before {
     background: -webkit-linear-gradient(#238612, #921126);
 }
+
 @media only screen and (max-width: 768px) {
     .container {
         gap: 0;
         width: 100%;
-        max-width: 900px;
         height: 400px;
         margin: 50% auto;
     }
     .container h1 {
-        font-size: 20px;
+        font-size: 30px
     }
     .todoList {
         gap: 0;
@@ -215,7 +231,7 @@ ul li.checked::before {
     }
     .todoList input {
         font-size: 14px;
-        margin: 0px 20px;
+        margin: 0px;
     }
     .message-wrapper {
         height: auto;
